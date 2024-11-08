@@ -1,0 +1,23 @@
+@page
+@model logindlm.Pages.Delete
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="mx-auto rounded border p-4" style="width: 400px">
+    <h2 class="text-center mb-3">Termék törlése</h2>
+    <hr />
+    <p>Biztos vagy benne, hogy törölni szeretnéd?</p>
+    <p>Termek ID=@Request.Query["id"]</p>
+    <hr />
+    <form method="post">
+        <div class="row">
+            <div class="col-sm-6 d-grid">
+                <button type="submit" class="btn btn-danger">Törlés</button>
+            </div>
+            <div class="col-sm-6 d-grid">
+                <a class="btn btn-outline-danger" href="/termek">Mégse</a>
+            </div>
+        </div>
+    </form>
+</div>

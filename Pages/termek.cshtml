@@ -1,0 +1,39 @@
+﻿@page
+@model logindlm.Pages.termekModel
+@{
+}
+<h2 class="text-center mb-3">Terméklista</h2>
+
+<a class="btn btn-primary mb-3" href="/Create">Új termék</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cikkszám</th>
+            <th>Terméknév</th>
+            <th>Leírás</th>
+            <th>Ár</th>
+            <th>Hozzáadott</th>
+            <th>Módosítás</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var termek in Model.TermekLista)
+        {
+            <tr>
+                <td>@termek.Id</td>
+                <td>@termek.Cikkszam</td>
+                <td>@termek.Termeknev</td>
+                <td>@termek.Leiras</td>
+                <td>@termek.Ar</td>
+                <td>@termek.CreateAt</td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" href="/Edit?id=@termek.Id">Szerkesztés</a>
+                    <a class="btn btn-danger btn-sm" href="/Delete?id=@termek.Id">Törlés</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

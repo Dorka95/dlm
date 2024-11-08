@@ -1,0 +1,62 @@
+@page
+@model logindlm.Pages.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-4">
+        <h2 class="text-center mb-5">Új termék hozzáadása</h2>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>@Model.ErrorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form method="post">
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Cikkszám*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Cikkszam" />
+                    <span asp-validation-for="Cikkszam" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Terméknév*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Termeknev" />
+                    <span asp-validation-for="Termeknev" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Leírás</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Leiras" />
+                    <span asp-validation-for="Leiras" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Ár*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Ar" />
+                    <span asp-validation-for="Ar" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Ment</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" href="/termek" role="button">Mégse</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
